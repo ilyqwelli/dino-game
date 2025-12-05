@@ -6,8 +6,9 @@ let gameStarted = false;
 let isAlive;
 let score = 0;
 let cactusPassed = false;
-let cactusSpeed = 1.5;
+let cactusSpeed = 2;
 let lastSpeedUpScore = 0;
+const initialCactusSpeed = 2;
 
 
 document.addEventListener('keydown', function(event) {
@@ -77,6 +78,10 @@ function startGame() {
 function resetGame() {
     cactus.style.animation = "none";
     cactus.style.left = "560px";
+
     clearInterval(isAlive);
     gameStarted = false;
+
+    cactusSpeed = initialCactusSpeed;
+    lastSpeedUpScore = 0;
 }
